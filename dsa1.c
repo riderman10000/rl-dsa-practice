@@ -17,9 +17,9 @@ void traverse_array(struct myArray* array){
 }
 
 void add_sequence_to_array(struct myArray* array){
-    for(int i = 0; i < array->total_space; i++){
+    for(int i = 0; i < array->used_space; i++){
         array->ptr[i] = i + 100;
-    }   
+    }
 }
 
 void insert_element(struct myArray * array, int element){
@@ -54,10 +54,14 @@ void main(){
     add_sequence_to_array(&myarray);
     traverse_array(&myarray);
     insert_element(&myarray, 11);
+    insert_element(&myarray, 10);
+    insert_element(&myarray, 21);
+    insert_element(&myarray, 20);
+    insert_element(&myarray, 17);
     traverse_array(&myarray);
     int indexof = get_index(&myarray, 100);
     delete_index(&myarray, indexof);
-    bubble_sort(&myarray);
+    insertion_sort(&myarray);
     // swap(&myarray.ptr[0], &myarray.ptr[1]);           
 
     traverse_array(&myarray);

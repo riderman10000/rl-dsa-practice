@@ -44,8 +44,9 @@ void selection_sort(struct myArray* array){
 }
 
 void bubble_sort(struct myArray* array){
-	for(int i =0; i < array->used_space; i++){
-		for(int j = 0; j < array->used_space; j++){
+	for(int i =0; i < array->used_space-1; i++){
+		for(int j = 0; j < array->used_space - i - 1 ; j++){
+			// last i elements are already in place
 			if(array->ptr[j+1] < array->ptr[j]){
 				swap(&array->ptr[j+1], &array->ptr[j]);
 			}
@@ -53,3 +54,13 @@ void bubble_sort(struct myArray* array){
 	}
 }
 
+
+void insertion_sort(struct myArray* array){
+	for(int i = 0; i < array->used_space; i++){
+		for(int j = i; j > 0; j--){
+			if(array->ptr[j-1] > array->ptr[j]){
+				swap(&array->ptr[j-1], &array->ptr[j]);
+			}
+		}
+	}
+}
