@@ -3,6 +3,7 @@
 
 #include "my_array.h"
 #include "sorting_algorithm.h"
+#include "search_algorithm.h"
 
 void main(){
     printf("hello world\n");
@@ -31,6 +32,10 @@ void main(){
     int indexof = get_index(&myarray, 100);
     delete_index(&myarray, indexof);
     
-    merge_sort(&myarray, 0, myarray.used_space);
+    
+    int element = 20;
+    merge_sort(&myarray, 0, myarray.used_space);    // calling sorting before the binary search 
     traverse_array(&myarray);
+    indexof = binary_search(&myarray, element);
+    printf("the index of the element %d is %d \n", element, indexof);
 }

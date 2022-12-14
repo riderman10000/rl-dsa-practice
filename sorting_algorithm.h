@@ -21,7 +21,6 @@ void counting_sort(struct myArray* array);
 void radix_sort(struct myArray* array);
 void bucket_sort(struct myArray* array);
 
-
 void selection_sort(struct myArray* array){
 	int min_element_index = 0;
 	for (int i =0; i < array->used_space; i++){

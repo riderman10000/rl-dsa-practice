@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+/*
+* Abstract Data Type - ADT
+*/
 
 struct myArray{
     int total_space;
@@ -41,6 +44,7 @@ void insert_element(struct myArray * array, int element){
 }
 
 int get_index(struct myArray * array, int element){
+    // this is similar to the linear search algorithm
     for(int i = 0; i < array->used_space; i++){
         if (array->ptr[i] == element){
             return i;
