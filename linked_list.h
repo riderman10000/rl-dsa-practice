@@ -8,6 +8,7 @@ struct linkedList{
 
 void traverse_linked_list(struct linkedList * linkedlist);
 void add_node(struct linkedList * linkedlist, int data);
+void delete_node(struct linkedList * linkedlist, int data);
 
 void traverse_linked_list(struct linkedList * linkedlist){
 	while(linkedlist){
@@ -17,6 +18,7 @@ void traverse_linked_list(struct linkedList * linkedlist){
 }
 
 void add_node(struct linkedList * linkedlist, int data){
+	// store the data in the heap
 	struct linkedList * newNode = (struct linkedList *)malloc(sizeof(struct linkedList));
 	newNode->data = data;
 	newNode->next = NULL;
@@ -26,4 +28,15 @@ void add_node(struct linkedList * linkedlist, int data){
 	}
 	linkedlist->next = newNode;
 	// printf("the data in the linked list %d\n", linkedlist->data);
+}
+
+void delete_node(struct linkedList * linkedlist, int data){
+	// break the chain and remove the address of chain 
+	struct linkedList *previousNodeAddress;
+	previousNodeAddress = linkedlist;
+	while(linkedlist -> data != data){
+		previousNodeAddress  = linkedlist;
+		linkedlist = linkedlist->next;
+	}
+	previousNodeAddress->next = linkedlist->next;
 }

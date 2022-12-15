@@ -21,4 +21,6 @@ void main(){
 	traverse_linked_list(&head);
 	add_node(&head, 999);
 	traverse_linked_list(&head);
+	delete_node(&head, 122);
+	traverse_linked_list(&head);
 }
