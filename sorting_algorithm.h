@@ -109,7 +109,6 @@ void merge(struct myArray* array, int left, int mid, int right){
 		}
 		k++;
 	}
-
 	// copy the remaining elements of left and right if there is any
 	while( i < left_array_size){
 		array->ptr[k] = leftArray.ptr[i];
@@ -130,3 +129,4 @@ void merge_sort(struct myArray* array, int left, int right){
 		merge(array, left, mid, right);
 	}
 }
+

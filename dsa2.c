@@ -20,7 +20,10 @@ void main(){
 	node3.next = NULL;
 	traverse_linked_list(&head);
 	add_node(&head, 999);
+	// traverse_linked_list(&head);
+	// delete_node(&head, 122);
+	// traverse_linked_list(&head);
+	add_node_at_beginning(&head, 232);
 	traverse_linked_list(&head);
-	delete_node(&head, 122);
-	traverse_linked_list(&head);
+
 }
