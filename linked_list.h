@@ -9,7 +9,7 @@ struct linkedList{
 void traverse_linked_list(struct linkedList * linkedlist);
 void add_node(struct linkedList * linkedlist, int data);
 void add_node_at_beginning(struct linkedList * linkedlist, int data);
-void add_node_after(struct linkedList * linkedlist, int node_data, int node_data_to_add);
+void add_node_after(struct linkedList * linkedlist, int given_node_data, int data);
 void delete_node(struct linkedList * linkedlist, int data);
 
 void traverse_linked_list(struct linkedList * linkedlist){
@@ -40,6 +40,17 @@ void add_node_at_beginning(struct linkedList * linkedlist, int data){
 	linkedlist->next = newNode;
 }
 
+void add_node_after(struct linkedList * linkedlist, int given_node_data, int data){
+	// store the data in the heap
+	struct linkedList * newNode = (struct linkedList *)malloc(sizeof(struct linkedList));
+	newNode->data = data;
+	newNode->next = NULL;
+	while(linkedlist->data != given_node_data && linkedlist->next){ //traversing to the data node, if not available add to end
+		linkedlist = linkedlist->next;
+	}
+	newNode->next = linkedlist->next;
+	linkedlist->next = newNode;
+}
 
 void delete_node(struct linkedList * linkedlist, int data){
 	// break the chain and remove the address of chain 

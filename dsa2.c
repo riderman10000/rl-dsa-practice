@@ -1,3 +1,4 @@
+/*about the linked list and operation*/ 
 #include<stdio.h>
 
 #include <stdlib.h>
@@ -23,7 +24,6 @@ void main(){
 	// traverse_linked_list(&head);
 	// delete_node(&head, 122);
 	// traverse_linked_list(&head);
-	add_node_at_beginning(&head, 232);
+	add_node_after(&head, 120, 232);
 	traverse_linked_list(&head);
-
 }
