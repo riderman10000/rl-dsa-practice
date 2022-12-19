@@ -21,5 +21,4 @@ void main(){
 	traverse_circular_linked_list(head);
 	head = delete_node_circular_linked_list(head, 222);
 	traverse_circular_linked_list(head);
-
 }
